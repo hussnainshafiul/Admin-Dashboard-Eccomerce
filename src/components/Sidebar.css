@@ -1,0 +1,76 @@
+.sidebar {
+  height: 100vh;
+  /* width: 30vh; */
+  background-color: #fff;
+  color: #444;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  transition: width 0.5s; /* Smooth transition for sidebar width */
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer; /* Make it obvious it's clickable */
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.sidebarMenu {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebarMenu li .icon {
+  margin-right: 10px;
+}
+
+.sidebarMenu li span {
+  display: none; /* Hide text when sidebar is collapsed */
+}
+
+.sidebarMenu.show li span {
+  display: inline; /* Show text when sidebar is expanded */
+}
+
+.sidebarMenu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebarMenu li:hover {
+  background-color: #879fff;
+  color: #fff;
+  border-radius: 17px;
+}
+
+.separator {
+  border-bottom: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.menu-icon {
+  display: none; /* Hide menu icon initially */
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 60px; /* Collapse sidebar width on smaller screens */
+  }
+  
+  .sidebarMenu li {
+    text-align: center; /* Center icons */
+  }
+  
+  .menu-icon {
+    display: block; /* Show menu icon on small screens */
+  }
+}

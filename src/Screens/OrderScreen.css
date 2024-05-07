@@ -1,0 +1,66 @@
+/* OrderScreen.css */
+
+.header-style {
+    background-color: #1F456E; /* Blue background */
+    color: white;
+    border: 2px solid #1F456E; /* Blue border */
+    padding: 10px 20px;
+    width: 100%;
+    margin: 0; /* Remove default margin */
+  }
+  
+  .table-container {
+    margin-top: 20px; /* Add margin only at the top */
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .card {
+    flex: 1;
+    margin: 0 10px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Updated shadow */
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+  }
+  
+  .card-content {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .search-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    border: 2px solid #1F456E; /* Blue border */
+    border-radius: 20px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-input {
+    flex: 1;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+  }
+  
+  .filter-button {
+    margin-left: 10px;
+  }

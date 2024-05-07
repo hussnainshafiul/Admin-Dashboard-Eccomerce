@@ -1,38 +1,141 @@
-.App {
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  display: flex; /* Added to ensure full height */
+  min-height: 100vh; /* Minimum height to fill the screen vertically */
+}
+
+.app {
+  width: 100vw; /* Full width of the viewport */
+  max-width: 100%; /* Ensures it does not exceed the viewport width */
+  margin: 0 auto; /* Centers the layout if needed */
+  padding: 0; /* Adjust padding as needed, perhaps you don't need horizontal padding */
+  box-sizing: border-box; /* Ensures padding and borders are included in the width */
+}
+.main-content {
+  flex-grow: 1; /* Takes up remaining space */
+  padding: 20px;
+  margin-left: 30vh; /* Add a margin on the left to offset the sidebar */
+  overflow-y: auto; /* Scroll if content overflows */
+}
+
+/* Sidebar styling - assuming you have some CSS for sidebar, add this if not */
+.sidebar {
+  width: 250px; /* Adjust width as necessary */
+  background-color: #f4f4f4; /* Different background to distinguish */
+  padding: 20px;
+  height: 100%; /* Full height */
+}
+
+
+h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Other styles remain unchanged */
+
+
+/* Search bar */
+.search-bar {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* User list */
+.user-list {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.user-list th,
+.user-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.user-list th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* User card */
+.user-card {
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-details {
+  flex-grow: 1;
+}
+
+.user-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.user-role {
+  color: #777;
+  margin-bottom: 0;
+}
+
+.menu-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #777;
+}
+
+.menu-options {
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 10;
+}
+
+.menu-options button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 0;
+  width: 100%;
+  text-align: left;
+}
+
+.menu-options button:hover {
+  background-color: #f0f0f0;
 }

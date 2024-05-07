@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Sidebar from "./components/Sidebar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Dashboard from "./Screens/Dashboard";
+import CustomerScreen from "./Screens/CustomerScreen";
+import OrderScreen from "./Screens/OrderScreen";
+import ProductScreen from "./Screens/ProductScreen";
 
-function App() {
+// Import other screens as needed
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Sidebar />
+        <div className="main-content">
+          <Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/customerscreen" element={<CustomerScreen />} />
+            <Route path="/orderscreen" element={<OrderScreen />} />
+            <Route path="/productscreen" element={<ProductScreen/>} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
