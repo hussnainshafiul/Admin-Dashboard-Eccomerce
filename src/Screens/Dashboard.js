@@ -4,6 +4,7 @@ import { DollarOutlined, UserOutlined, ShoppingOutlined, FundOutlined } from '@a
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import PopularCategories from './PopularCategories';
 import Header from '../components/Header';
+import SalesChart from './SalesChart';
 
 const Dashboard = () => {
   const cardHoverContent = {
@@ -24,14 +25,6 @@ const Dashboard = () => {
     </Popover>
   );
 
-  const monthlySalesData = [
-    { month: 'Jan', sales: 3000 },
-    { month: 'Feb', sales: 4000 },
-    { month: 'Mar', sales: 5500 },
-    { month: 'Apr', sales: 6000 },
-    { month: 'May', sales: 7000 },
-    { month: 'Jun', sales: 8000 },
-  ];
 
   const websiteVisitsData = [
     { date: '2024-03-01', visits: 200 },
@@ -78,25 +71,18 @@ const Dashboard = () => {
 
       <Divider />
 
-      <Row gutter={[16, 16]} justify="center">
+     
+
+     
+    <Row gutter={[16, 16]} justify="center">
         <Col xs={24} sm={24} md={12} lg={12}>
-          <h2 style={{ textAlign: 'center', marginBottom: '24px', fontFamily: 'Arial', fontSize: '20px' }}>Monthly Sales</h2>
-          <ResponsiveContainer width="100%" height={200}>
-            <BarChart data={monthlySalesData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="month" />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="sales" fill="#8884d8">
-                {monthlySalesData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={index % 2 === 0 ? '#8884d8' : '#82ca9d'} />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+          <SalesChart />
         </Col>
-        <PopularCategories/>
+        <Col xs={24} sm={24} md={12} lg={12}>
+          <PopularCategories />
+        </Col>
       </Row>
+    
 
       <Row gutter={[16, 16]} justify="center">
         <Col xs={24} sm={24} md={12} lg={12}>
@@ -134,3 +120,5 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+

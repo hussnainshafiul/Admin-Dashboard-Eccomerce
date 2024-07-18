@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button, TextField } from '@mui/material';
+import { firebase } from '../config'; // Import your firebase instance from config.js
 
 function AddProductModal({ open, onClose, onSubmit }) {
   const [formData, setFormData] = useState({
@@ -16,10 +17,17 @@ function AddProductModal({ open, onClose, onSubmit }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    onSubmit(formData);
-    onClose();
+  const handleSubmit = async () => {
+    try {
+      const firestore = firebase.firestore();
+      await firestore.collection('products').add(formData); // Storing data in Firestore
+      onClose();
+    } catch (error) {
+      console.error('Error adding product: ', error);
+    }
+    onSubmit(formData); // We're keeping this to handle UI updates or any other logic you have outside of Firestore
   };
+
 
   return (
     <Modal open={open} onClose={onClose}>
